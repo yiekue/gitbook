@@ -1,0 +1,1116 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>条款7：创建对象时区分()和{} · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="8-Prefer-nullptr-to-0-and-NULL.html" />
+    
+    
+    <link rel="prev" href="README.md" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../FromthePublisher/">
+            
+                <a href="../FromthePublisher/">
+            
+                    
+                    出版者的忠告
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Acknowledgements/">
+            
+                <a href="../Acknowledgements/">
+            
+                    
+                    致谢
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Introduction/">
+            
+                <a href="../Introduction/">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../DeducingTypes/">
+            
+                <a href="../DeducingTypes/">
+            
+                    
+                    第一章 类型推导
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../DeducingTypes/1-Understand-template-type-deduction.html">
+            
+                <a href="../DeducingTypes/1-Understand-template-type-deduction.html">
+            
+                    
+                    条款1：理解模板类型推导
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../DeducingTypes/2-Understand-auto-type-deduction.html">
+            
+                <a href="../DeducingTypes/2-Understand-auto-type-deduction.html">
+            
+                    
+                    条款2：理解auto类型推导
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../DeducingTypes/3-Understand-decltype.html">
+            
+                <a href="../DeducingTypes/3-Understand-decltype.html">
+            
+                    
+                    条款3：理解decltype
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../DeducingTypes/4-Know-how-to-view-deduced-types.html">
+            
+                <a href="../DeducingTypes/4-Know-how-to-view-deduced-types.html">
+            
+                    
+                    条款4：知道如何查看类型推导
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../auto/">
+            
+                <a href="../auto/">
+            
+                    
+                    第二章 auto关键字
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../auto/5-Prefer-auto-to-explicit-type-declarations.html">
+            
+                <a href="../auto/5-Prefer-auto-to-explicit-type-declarations.html">
+            
+                    
+                    条款5：优先使用auto而非显式类型声明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../auto/6-Use-the-explicitly-typed-initializer-idiom-when-auto-deduces-undesired-types.html">
+            
+                <a href="../auto/6-Use-the-explicitly-typed-initializer-idiom-when-auto-deduces-undesired-types.html">
+            
+                    
+                    条款6：当auto推导出非预期类型时应当使用显式的类型初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="README.md">
+            
+                <span>
+            
+                    
+                    第三章 使用现代C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.7.1" data-path="7-Distinguish-between-xxx-when-creating-objects.html">
+            
+                <a href="7-Distinguish-between-xxx-when-creating-objects.html">
+            
+                    
+                    条款7：创建对象时区分()和{}
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="8-Prefer-nullptr-to-0-and-NULL.html">
+            
+                <a href="8-Prefer-nullptr-to-0-and-NULL.html">
+            
+                    
+                    条款8：优先使用nullptr而不是0或者NULL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="9-Prefer-alias-declarations-to-typedefs.html">
+            
+                <a href="9-Prefer-alias-declarations-to-typedefs.html">
+            
+                    
+                    条款9：优先使用声明别名而不是typedef
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="10-Prefer-scoped-enum-to-unscoped-enums.html">
+            
+                <a href="10-Prefer-scoped-enum-to-unscoped-enums.html">
+            
+                    
+                    条款10：优先使用作用域限制的enmu而不是无作用域的enum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="11-Prefer-deleted-functions-to-private-undefined-ones.html">
+            
+                <a href="11-Prefer-deleted-functions-to-private-undefined-ones.html">
+            
+                    
+                    条款11：优先使用delete关键字删除函数而不是private却又不实现的函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="12-Declare-overriding-functions-override.html">
+            
+                <a href="12-Declare-overriding-functions-override.html">
+            
+                    
+                    条款12：使用override关键字声明覆盖的函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="13-Prefer-const_iterators-to-iterators.html">
+            
+                <a href="13-Prefer-const_iterators-to-iterators.html">
+            
+                    
+                    条款13：优先使用const_iterator而不是iterator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="14-Declare-functions-noexcept-if-they-won’t-emit-exceptions.md">
+            
+                <span>
+            
+                    
+                    条款14：使用noexcept修饰不想抛出异常的函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="15-Use-constexpr-whenever-possible.md">
+            
+                <span>
+            
+                    
+                    条款15：尽可能的使用constexpr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="16-Make-const-member-functions-thread-safe.md">
+            
+                <span>
+            
+                    
+                    条款16：保证const成员函数线程安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.11" data-path="17-Understand-special-member-function-generation.md">
+            
+                <span>
+            
+                    
+                    条款17：理解特殊成员函数的生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../SmartPointers/">
+            
+                <a href="../SmartPointers/">
+            
+                    
+                    第四章 智能指针
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../SmartPointers/18-Use-std-unique_ptr-for-exclusive-ownership-resource-management.html">
+            
+                <a href="../SmartPointers/18-Use-std-unique_ptr-for-exclusive-ownership-resource-management.html">
+            
+                    
+                    条款18：使用std::unique_ptr管理独占资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../SmartPointers/19-Use-std-shared_ptr-for-shared-ownership-resource-management.html">
+            
+                <a href="../SmartPointers/19-Use-std-shared_ptr-for-shared-ownership-resource-management.html">
+            
+                    
+                    条款19：使用std::shared_ptr管理共享资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../SmartPointers/20-Use-std-weak_ptr-for-std-shared_ptr-like-pointers-that-can-dangle.html">
+            
+                <a href="../SmartPointers/20-Use-std-weak_ptr-for-std-shared_ptr-like-pointers-that-can-dangle.html">
+            
+                    
+                    条款20：在std::shared_ptr类似指针可以悬挂时使用std::weak_ptr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../SmartPointers/21-Prefer-std-make_unique-and-std-make_shared-to-direct-use-of-new.html">
+            
+                <a href="../SmartPointers/21-Prefer-std-make_unique-and-std-make_shared-to-direct-use-of-new.html">
+            
+                    
+                    条款21：优先使用std::make_unique和std::make_shared而不是直接使用new
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../SmartPointers/22-When-using-the-Pimpl-Idiom-define-special-member-functions-in-the-implementation-file.html">
+            
+                <a href="../SmartPointers/22-When-using-the-Pimpl-Idiom-define-special-member-functions-in-the-implementation-file.html">
+            
+                    
+                    条款22：当使用Pimpl的时候在实现文件中定义特殊的成员函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../RvalueReferencesMoveSemanticsandPerfectForwarding/">
+            
+                <a href="../RvalueReferencesMoveSemanticsandPerfectForwarding/">
+            
+                    
+                    第五章 右值引用、移动语义和完美转发
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../RvalueReferencesMoveSemanticsandPerfectForwarding/23-Understand-std-move-and-std-forward.html">
+            
+                <a href="../RvalueReferencesMoveSemanticsandPerfectForwarding/23-Understand-std-move-and-std-forward.html">
+            
+                    
+                    条款23：理解std::move和std::forward
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../RvalueReferencesMoveSemanticsandPerfectForwarding/24-Distinguish-universal-references-from-rvalue-references.html">
+            
+                <a href="../RvalueReferencesMoveSemanticsandPerfectForwarding/24-Distinguish-universal-references-from-rvalue-references.html">
+            
+                    
+                    条款24：区分通用引用和右值引用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../RvalueReferencesMoveSemanticsandPerfectForwarding/25-Use-std-move-on-rvalue-references-std-forward-on-universal-references.md">
+            
+                <span>
+            
+                    
+                    条款25：在右值引用上使用std::move 在通用引用上使用std::forward
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../RvalueReferencesMoveSemanticsandPerfectForwarding/26-Avoid-overloading-on-universal-references.md">
+            
+                <span>
+            
+                    
+                    条款26：避免在通用引用上重定义函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../RvalueReferencesMoveSemanticsandPerfectForwarding/27-Familiarize-yourself-with-alternatives-to-overloading-on-universal-references.md">
+            
+                <span>
+            
+                    
+                    条款27：熟悉通用引用上重定义函数的其他选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../RvalueReferencesMoveSemanticsandPerfectForwarding/28-Understand-reference-collapsing.md">
+            
+                <span>
+            
+                    
+                    条款28：理解引用折叠
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../RvalueReferencesMoveSemanticsandPerfectForwarding/29-Assume-that-move-operations-are-not-present-not-cheap-and-not-used.md">
+            
+                <span>
+            
+                    
+                    条款29：假定移动操作不存在，不廉价，不使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../RvalueReferencesMoveSemanticsandPerfectForwarding/30-Familiarize-yourself-with-perfect-forwarding-failure-cases.md">
+            
+                <span>
+            
+                    
+                    条款30：熟悉完美转发和失败的情况
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../LambdaExpressions/README.md">
+            
+                <span>
+            
+                    
+                    第六章 Lambda表达式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../LambdaExpressions/31-Avoid-default-capture-modes.md">
+            
+                <span>
+            
+                    
+                    条款31：避免默认的参数捕捉
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../LambdaExpressions/32-Use-init-capture-to-move-objects-into-closures.md">
+            
+                <span>
+            
+                    
+                    条款32：使用init捕捉来移动对象到闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../LambdaExpressions/33-Use-decltype-on-auto&&-parameters-to-std-forward-them.md">
+            
+                <span>
+            
+                    
+                    条款33：在auto&&参数上使用decltype当std::forward auto&&参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../LambdaExpressions/34-Prefer-lambdas-to-std-bind.md">
+            
+                <span>
+            
+                    
+                    条款34：优先使用lambda而不是std::bind
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../TheConcurrencyAPI/README.md">
+            
+                <span>
+            
+                    
+                    第七章 并发API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../TheConcurrencyAPI/35-Prefer-task-based-programming-to-thread-based.md">
+            
+                <span>
+            
+                    
+                    条款35：优先使用task-based而不是thread-based
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../TheConcurrencyAPI/36-Specify-std-launch-async-if-asynchronicity-is-essential.md">
+            
+                <span>
+            
+                    
+                    条款36：当异步是必要的时声明std::launch::async
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../TheConcurrencyAPI/37-Make-std-threads-unjoinable-on-all-paths.md">
+            
+                <span>
+            
+                    
+                    条款37：使得std::thread在所有的路径下无法join
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../TheConcurrencyAPI/38-Be-aware-of-varying-thread-handle-destructor-behavior.md">
+            
+                <span>
+            
+                    
+                    条款38：注意线程句柄析构的行为
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../TheConcurrencyAPI/39-Consider-void-futures-for-one-shot-event-communication.md">
+            
+                <span>
+            
+                    
+                    条款39：考虑在一次性事件通信上void的特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../TheConcurrencyAPI/40-Use-std-atomic-for-concurrency-volatile-for-special-memory.md">
+            
+                <span>
+            
+                    
+                    条款40：在并发时使用std::atomic 在特殊内存上使用volatile
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../Tweaks/README.md">
+            
+                <span>
+            
+                    
+                    第八章 改进
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../Tweaks/41-Consider-pass-by-value-for-copyable-parameters-that-are-cheap-to-move-and-always-copied.md">
+            
+                <span>
+            
+                    
+                    条款41：考虑对拷贝参数按值传递移动廉价，那就尽量拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../Tweaks/42-Consider-emplacement-instead-of-insertion.md">
+            
+                <span>
+            
+                    
+                    条款42：考虑使用emplace代替insert
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >条款7：创建对象时区分()和{}</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;7&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B1;&#x2B9;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;">&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;7:&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B1;&#x2B9;&#xFFFD;&#xFFFD;()&#xFFFD;&#xFFFD;{}&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;</h1>
+<p>&#xFFFD;&#xFFFD;C++11&#xFFFD;&#x423;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x436;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFDE8;&#x461;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x536;&#xFFFD;&#xFFFD;&#xFFFD;&#x133;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFDE8;&#xFFFD;&#x535;&#xFB;&#xFFFD;&#xFFFD;&#x4B2;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B4;&#x4E3;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x163;&#xFFFD;&#xFFFD;&#x23A;&#x163;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x17E;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x433;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;</p>
+<pre><code>int x(0);    //&#x2B9;&#xFFFD;&#xFFFD;()&#xFFFD;&#xFFFD;&#xFFFD;&#x433;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;
+int y = 0;    //&#x2B9;&#xFFFD;&#xFFFD;=&#xFFFD;&#xFFFD;&#xFFFD;&#x433;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;
+int z{0};    //&#x2B9;&#xFFFD;&#xFFFD;{}&#xFFFD;&#xFFFD;&#xFFFD;&#x433;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;
+</code></pre><p>&#xFFFD;&#x6BA;&#x736;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xA3;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x36C;&#x2B1;&#x2B9;&#xFFFD;&#xF5;&#x23A;&#x17A;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;</p>
+<pre><code>int z = {0};    //&#x2B9;&#xFFFD;&#xFFFD;{}&#xFFFD;&#xFFFD;=&#xFFFD;&#xFFFD;&#xFFFD;&#x433;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;
+</code></pre><p>&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x368;&#xFFFD;&#xFFFD;&#xFFFD;&#x13B;&#xFFFD;&#xFFFD;&#xFFFD;&#x521;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;-&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x161;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFDE8;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3AA;C++&#x368;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3AA;&#xFFFD;&#xFFFD;&#x5BB;&#xFFFD;&#x434;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x161;&#xFFFD;
+&#xFFFD;&#xFFFD;&#x3AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFDE8;&quot;&#xFFFD;&#xFFFD;&#xFFFD;&#x4B2;&#xFFFD;&#xFFFD;&#xFFFD;&quot;&#xFFFD;&#x131;&#x7EE4;&#xFFFD;&#xFFFD;&#x5B8;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xF5;&#x23A;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x6B3;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;C++&#xFFFD;&#x133;&#xFFFD;&#x467;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3AA;&#xFFFD;&#xFFFD;&#x5B5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x47E;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2E3;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B5;&#xFFFD;&#xFFFD;&#xFFFD;&#x3F2;&#xFFFD;&#xFB;&#xFFFD;&#x421;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x6BD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;int&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3F5;&#x123;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F6;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFB;&#xFFFD;&#xFFFD;&#x536;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x363;&#xFFFD;&#xFFFD;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#x378;&#xFFFD;&#x5B5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3AA;&#xFFFD;&#xFFFD;&#xFFFD;&#x7F5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2F2;&#xFFFD;&#x36C;&#xFFFD;&#x13A;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;</p>
+<pre><code>Widget w1;    //&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2F9;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;
+Widget w2 = w1;    //&#xFFFD;&#xFFFD;&#xFFFD;&#x1F8;&#xFFFD;&#x5B5;&#xFFFD;&#xFFFD;&#x48EC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2FF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;
+w1 = w2;    //&#xFFFD;&#xFFFD;&#x5B5;&#xFFFD;&#xFFFD;&#x48EC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;=&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;
+</code></pre><p>&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4F5;&#xFFFD;&#x436;&#xFFFD;&#xFFFD;&#x5B3;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFDE8;&#xFFFD;&#xFFFD;C++98&#xFFFD;&#x6BA;&#x736;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x7B7;&#xFFFD;&#x2B5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4AA;&#xFFFD;&#x133;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x78EC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B1;&#xFFFD;&#xFFFD;&#xFFFD;&#x436;&#x3F5;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;STL&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#x429;&#x5B5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;(&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;,1,3,5)&#xFFFD;&#xFFFD;&#x2B1;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F7;&#xFFFD;&#x4E6;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;
+&#x3AA;&#xFFFD;&#x2FD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B3;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFDE8;&#xFFFD;&#xFFFD;&#x37B;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x28EC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4B2;&#xFFFD;&#x7B7;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x435;&#x133;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;C++11&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x373;&#x4BB;&#xFFFD;&#x133;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;:&#x2B9;&#xFFFD;&#xF5;&#xFFFD;&#x4BB;&#xFFFD;&#x133;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFDE8;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3FF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3BA;&#x3B5;&#x637;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x435;&#x133;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x6B4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x163;&#xFFFD;&#xFFFD;&#xFFFD;&#x4B2;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x6B4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x52D;&#xFFFD;&#xFFFD;&quot;&#x373;&#x4BB;&#xFFFD;&#x133;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&quot;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xE8EC;&quot;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&quot;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFDE8;&#x2B5;&#xFFFD;&#x5A1;&#xFFFD;
+&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F0;&#xFFFD;&#xFFFD;&#xFFFD;&#x731;&#xFFFD;&#xFFFD;&#x13A;&#xFFFD;&#xFFFD;&#x5863;&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x163;&#xFFFD;&#x5B8;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2BC;&#x5B5;&#xFFFD;&#xFFFD;&#xFC;&#xFFFD;:</p>
+<pre><code>std::vector&lt;int&gt; v{1,3,5};//v&#xFFFD;&#x133;&#xFFFD;&#x2BC;&#x5B5;&#xFFFD;&#xFFFD;1,3,5
+</code></pre><p>&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4B2;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3AA;&#xFFFD;&#x1FE;&#xFFFD;&#x32C;&#xFFFD;&#xFFFD;&#xFFFD;&#x773;&#xFFFD;&#x531;&#x5B8;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#x12C;&#xFFFD;&#xFFFD;&#x5B5;&#xFFFD;&#xFFFD;C++11&#xFFFD;&#x435;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFDE8;&#xFFFD;&#xFFFD;&#x5A7;&#xFFFD;&#x5B4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&quot;=&quot;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x172;&#xFFFD;&#xFFFD;&#x423;&#xFFFD;</p>
+<pre><code>class Widget{
+   ...
+   private:
+    int x{0};    //&#xFFFD;&#xFFFD;&#x237;&#xFFFD;&#xFFFD;x&#x12C;&#xFFFD;&#xFFFD;&#x5B5;&#x3AA;0
+    int y = 0;    //&#xFFFD;&#xFFFD;&#x237;
+    int z(0);    //&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;
+}
+</code></pre><p>&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1FF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;(std:atomics-&#xFFFD;&#x3BF;&#xFFFD;&#xFFFD;&#xFFFD;40&#xFFFD;&#xFFFD;)&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x17A;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&quot;=&quot;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;:</p>
+<pre><code>std::atomic&lt;int&gt; ai1{0};    //&#xFFFD;&#xFFFD;&#x237;
+std::atomic&lt;int&gt; ai2(0);    //&#xFFFD;&#xFFFD;&#x237;
+std::atomic&lt;int&gt; ai3 = 0;    //&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;
+</code></pre><p>&#xFFFD;&#xFFFD;&#x2FA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3AA;&#xFFFD;&#xFFFD;&#x5FC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3AA;C++&#xFFFD;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1B5;&#x131;&#xFFFD;&#xFFFD;&#x2BD;&#xFFFD;&#x423;&#xFFFD;&#x5BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x17F;&#xFFFD;&#xFFFD;&#x531;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3BA;&#x3B5;&#x637;&#xFFFD;&#xFFFD;&#xFFFD;
+&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xB5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B9;&#xFFFD;&#x6BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2BD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B5;&#x5EA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x435;&#x131;&#xFFFD;&#xFFFD;&#x2BD;&#xFFFD;&#x373;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x372;&#xFFFD;&#x4BB;&#xFFFD;&#xA3;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xBF6B;&#xFFFD;&#x7B7;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xB8FA;</p>
+<pre><code>double x,y,z;
+...
+int sum1{x + y + z};    //&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2EB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x7B7;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;
+&#x2B9;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x17A;&#x375;&#x23A;&#x17D;&#xFFFD;&#xFFFD;&#x433;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#x2B1;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B5;&#x5EA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x67A;&#x736;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x134;&#xFFFD;&#xFFFD;&#xFFFD;:
+</code></pre><p>int sum2(x + y + z);    //&#xFFFD;&#xFFFD;&#x237;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2BD;&#xFFFD;&#xFFFD;&#x5B5;&#x3AA;&#x5EA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;
+int sum3 = x + y + z;    //&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;</p>
+<pre><code>&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#x5B5;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x635;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;C++&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x377;&#xFFFD;&#x6F5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x52D;&#xFFFD;&#xFFFD;C++&#x52D;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3BA;&#x3B5;&#x13F;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x131;&#xFFFD;&#xFFFD;&#xBC7B;&#xFFFD;&#xFFFD;&#xFFFD;&#x373;&#xFFFD;&#x3A8;&#x4BB;&#xFFFD;&#x123;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x17F;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x7F5;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x12C;&#xFFFD;&#x3F9;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xE3B35;&#xFFFD;&#xFFFD;&#x1F3;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x53C;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x13A;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x52D;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;
+</code></pre><p>Widget w1(10);        //&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;Widget&#xFFFD;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x772;&#xFFFD;&#xFFFD;&#xFFFD;10</p>
+<pre><code>&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFDE8;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#x7B2;&#x3B5;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F6;&#xFFFD;&#xFFFD;&#xFFFD;
+</code></pre><p>Widget w2();        //&#xFFFD;&#x1F3;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x58EC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;Widget&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;w2&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;</p>
+<pre><code>&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x174;&#xFFFD;&#xFFFD;&#x772;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x431;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x12C;&#xFFFD;&#x3F9;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x28FA;
+</code></pre><p>Widget w3{};        //&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;Widget&#xFFFD;&#x7B2;&#x3B9;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;</p>
+<pre><code>&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x17D;&#xFFFD;&#xFFFD;&#x433;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x43A;&#x736;&#xFFFD;&#x5B5;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#x135;&#x637;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFDE8;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x6B9;&#x3DFA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFB3;&#x5AE;&#xFFFD;&#x423;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x537;&#xFFFD;&#x5B9;&#xFFFD;&#xFFFD;&#x2BD;&#x5B5;&#x5EA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4B2;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;C++&#xFFFD;&#x136;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x521;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B5;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xF5;&#x13A;&#xFFFD;&#xFFFD;&#xA1;&#xFFFD;&#xFFFD;&#xFFFD;&#xF4;&#x3AA;&#x2B2;&#xF4;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2CBB;&#xFFFD;&#x1FD;&#xFFFD;&quot;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFDE8;&quot;&#xFFFD;&#xFFFD;?
+&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x175;&#x133;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x231;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#x429;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x429;&#xFFFD;&#xFFFD;&#x3AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD; std::initializer_lists&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x639;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xCCE3;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x139;&#xFFFD;&#x3F5;&#xFFFD;&#x421;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5AE;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xEE5;&#xFFFD;&#xFFFD;&#x3F5;&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xBFEA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xA3;&#xFFFD;&#x2B5;&#xFFFD;&#xFFFD;&#xFFFD;&#x3F2;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1E1;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x78EC;&#xFFFD;&#xFFFD;&#x13F;2&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2F5;&#xFFFD;&#x2B9;&#xFFFD;&#xFFFD;auto&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x131;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#x2B1;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1B6;&#xFFFD;&#x3AA;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#x363;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x36C;&#xFFFD;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x137;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x378;&#xFFFD;&#x3AA;&#x5B1;&#xFFFD;&#x6E1;&#xFFFD;&#xFFFD;&#xFFFD;&#x275;&#x13D;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1E3;&#xFFFD;&#xFFFD;&#xFFFD;&#x53D;&#x3F2;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xFFFD;auto&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x53D;&#xFB;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x9863;
+&#xFFFD;&#x6B9;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x423;&#xFFFD;&#x5BB;&#x4AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x431;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x17A;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;
+</code></pre><p>class Widget{
+public:
+    Widget(int i,bool b);    //&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3AA;std::initializer_list&#xFFFD;&#x132;&#xFFFD;&#xFFFD;&#xFFFD;
+    Widget(int i,double d);<br>}&#xFFFD;&#xFFFD;
+Widget w1(10,true);        //&#xFFFD;&#xFFFD;&#xFFFD;&#xF5;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;
+Widget w2(10,true);        //&#x36C;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xF5;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;
+Widget w3(10,50);        //&#xFFFD;&#xFFFD;&#xFFFD;&#xF5;&#x6B6;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;
+Widget w4(10,50);        //&#x36C;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xF5;&#x6B6;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;</p>
+<pre><code>&#xFFFD;&#xFFFD;&#xFFFD;&#x1E3;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#x132;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFDE8;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x235;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xFFFD;&#xFFFD;&#x2F2;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x237;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#x1E3;&#xFFFD;&#x5BB;&#x4AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x530;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x373;&#x275;&#xFFFD;&#xFFFD;&#xFE;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x139;&#xFFFD;&#x368;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;Widget&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_list&lt;long double&gt;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xA3;&#xFFFD;
+class Widget{
+public:
+   Widget(int i,bool b);    //&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;
+   Widget(int i,double d);    //&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;
+   Widget(std::initializer_list&lt;long double&gt; il); //&#xFFFD;&#xBC;&#x4F5;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;
+   ...
+};
+</code></pre><p>w2&#xFFFD;&#xFFFD;w4&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xB5;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x237;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1A5;&#xFFFD;&#xFFFD;,&#xFFFD;&#xFFFD;&#xFFFD;&#xA3;&#xFFFD;</p>
+<pre><code>Widget w1(10,true);        //&#x2B9;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x179;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;
+Widget w2{10,true};        //&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x179;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;,&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;10&#xFFFD;&#xFFFD;true&#xFFFD;&#xFFFD;&#x5EA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;long dobule&#xFFFD;&#xFFFD;
+Widget w3(10,5,0);        //&#x2B9;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x179;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;
+Widget w4{10,5.0};        //&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x163;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;10&#xFFFD;&#xFFFD;5.0&#xFFFD;&#xFFFD;&#x5EA;&#xFFFD;&#xFFFD;&#x3AA;long double
+</code></pre><p>&#xFFFD;&#xFFFD;&#x2B9;&#x368;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1BA;&#xFFFD;&#xFFFD;&#x1B6;&#xFFFD;&#xFFFD;&#x139;&#xFFFD;&#xFFFD;&#xFFFD;&#x4B2;&#xFFFD;&#x1C7B;&#xFFFD;&#xFFFD;&#x3AA;&#x2B9;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;:</p>
+<pre><code>class Widget{
+public:
+    Widget(int i,bool b);                //&#x36C;&#xFFFD;&#xFFFD;
+    Widget(int i,double d);                //&#x36C;&#xFFFD;&#xFFFD;
+    Widget(std::initializer_list&lt;long double&gt; il);    //&#x36C;&#xFFFD;&#xFFFD;
+
+    operator float() const;                //&#x5EA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;float&#xFFFD;&#xFFFD;
+    ...
+};
+Widget w5(w4);                        //&#x2B9;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x163;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;
+Widget w6(w4);                        //&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x163;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x379;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;,w4&#xFFFD;&#xFFFD;&#x5EA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;float&#xFFFD;&#xFFFD;&#x23B;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5EA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;long double
+Widget w7(std::move(w4));                //&#x2B9;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x163;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;move&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;
+Widget w8{std::move(w4)};                //&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x163;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;w6&#x52D;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;
+</code></pre><p>&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_lists&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x538;&#x1FF;&#xFFFD;&#x4A3;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B1;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x135;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F2;&#xFFFD;&#x368;&#xFFFD;&#xFFFD;&#xFFFD;&#x121;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;</p>
+<pre><code>class Widget{
+public:
+   Widget(int i,bool b);            //&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;
+   Widget(int i,double d);            //&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;
+
+   Widget(std::initializer_list&lt;bool&gt; il);    //&#x52A;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;bool
+
+   ...
+};
+Widget w{10,5.0};                //&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x56D;&#xFFFD;&#xFFFD;&#x5EA;&#xFFFD;&#xFFFD;
+</code></pre><p>&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xF8EC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F0;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;(&#xFFFD;&#x6B6;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F2;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x22B;&#x1A5;&#xFFFD;&#xFFFD;&#xFFFD;)&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x37C;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_list<bool>&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4AA;&#xFFFD;&#xFFFD;int(10)&#xFFFD;&#xFFFD;double(5.0)&#x5EA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;bool&#xFFFD;&#x361;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5EA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x56D;(bool&#xFFFD;&#x372;&#xFFFD;&#xFFFD;&#x734;&#xFFFD;&#xFFFD;&#xFFFD;int&#xFFFD;&#xFFFD;double&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;)&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x56D;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5EA;&#xFFFD;&#xFFFD;&#xFFFD;&#x6B4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x6B3;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F1;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B9;&#xFFFD;&#x123;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xF7;&#x1F7;&#xFFFD;&#xFFFD;&#x123;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xBCBB;&#x368;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;
+&#x5BB;&#xFFFD;&#x435;&#xFFFD;&#xFFFD;&#x7B7;&#xFFFD;&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#x132;&#xFFFD;&#xFFFD;&#xFFFD;&#x5EA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#x2B1;&#xFFFD;&#xA3B31;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x17B;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x78EC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1FD;&#xFFFD;std::initializer_list<std::bool>&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#x6EFB;&#xFFFD;&#xFFFD;std::initializer_list<std::string>&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3AA;&#xFFFD;&#xFFFD;&#x461;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3AA;&#xFB;&#xFFFD;&#x430;&#xCDE8;&#xFFFD;&#xFFFD;int&#xFFFD;&#xFFFD;bool&#xFFFD;&#xFFFD;&#x5EA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::strings:</std::string></std::bool></bool></p>
+<pre><code>class Widget{
+public:
+    Widget(int i,bool b);            //&#x36C;&#xFFFD;&#xFFFD;
+    Widget(int i,double d);            //&#x36C;&#xFFFD;&#xFFFD;
+
+    //std::initalizer_list&#x52A;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::string
+    Widget(std::initializer_list&lt;std::string&gt; il);//&#xFB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2BD;&#x5EA;&#xFFFD;&#xFFFD;
+    ...
+    };
+
+    Widget w1(10,true);                //&#x2B9;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xF5;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;
+    Widget w2{10,true};                //&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xF5;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;
+    Widget w3(10,5.0);                //&#x2B9;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xF5;&#x6B6;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;
+    Widget w4{10,5.0};                //&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xF5;&#x6B6;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;
+</code></pre><p>&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x47E;&#xFFFD;&#xFFFD;&#x4FD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x33D;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x639;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x224;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B5;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#x1863;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#x575;&#x134;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x179;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xE3B36;&#xFFFD;&#xFFFD;&#xFFFD;&#x36C;&#x2B1;&#x5A7;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#x3AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x575;&#x134;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x172;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B8;&#x2B2;&#xF4;&#xFFFD;&#x623;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2BE;&#xFFFD;&#x575;&#x132;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xF4;&#xFFFD;&#x3F6B;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x12C;&#xFFFD;&#x3F9;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2BE;&#xFFFD;&#x575;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B5;&#xFFFD;&#x2B4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;
+&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F5;&#xFFFD;&#xFFFD;&#xFFFD;&#x12C;&#xFFFD;&#x3F9;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x575;&#x134;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3B6;&#xFFFD;&#xFFFD;&#xFFFD;&#x7B2;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1FF;&#x575;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;</p>
+<pre><code>class Widget{
+public:
+    Widget();                    //&#x12C;&#xFFFD;&#x3F9;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;
+
+    Widget(std::initializer_list&lt;init&gt; il);    //std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;
+    ...
+};
+Widget w1;                    //&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x12C;&#xFFFD;&#x3F9;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;
+Widget w2{};                    //&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x12C;&#xFFFD;&#x3F9;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;
+Widget w3{};                    //&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x57B;&#xFFFD;&#x13D;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;
+</code></pre><p>&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xFF;&#x575;&#xFFFD;initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xFF;&#x575;&#x134;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;--&#xFFFD;&#x47F;&#x575;&#x134;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x177;&#xFFFD;&#xFFFD;&#xFFFD;&#x421;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5AE;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xADA8;&#xFFFD;&#x3D2B;&#xFFFD;&#x775;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;:</p>
+<pre><code>Widget w4({});                    //&#x2B9;&#xFFFD;&#xFF;&#xFFFD;&#xFFFD;&#x431;&#xFFFD;&#xFFFD;&#xFFFD;&#x3AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#x375;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;
+Widget w5({});                    //&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;
+</code></pre><p>&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#x3E3;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x635;&#x134;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_lists&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x639;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x53A;&#xFFFD;&#xFFFD;&#x423;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x436;&#xFFFD;&#xFFFD;&#x675;&#xFFFD;&#xFFFD;&#xFFFD;&#x3E2;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4F0;&#xFFFD;&#xCD7D;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1BD;&#x2B1;&#xFFFD;&#x573;&#xFFFD;&#xFFFD;&#x131;&#xFFFD;&#xFFFD;&#xFFFD;&#x421;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x138;&#xFFFD;&#xFFFD;&#x8EC;&#xFFFD;&#xFFFD;&#x3AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B1;&#xFFFD;&#xFFFD;&#x4F0;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::vector&#xFFFD;&#xFFFD;std::vector&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B8;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x134;&#xFFFD;&#x421;&#xFFFD;&#x53C;&#xFFFD;&#xFF;&#xFFFD;&#xFFFD;&#x52A;&#xFFFD;&#x635;&#x133;&#xFFFD;&#x2BC;&#x5B5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4F5;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B8;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x133;&#xFFFD;&#x2BC;&#x5B5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3D34;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B5;&#xFFFD;&#xFFFD;&#xFFFD;&#x375;&#xFFFD;(&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;:std::vector<int>)&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4B4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x17A;&#xFFFD;&#x421;&#xFFFD;&#xFFFD;&#xFFFD;&#x174;&#xFFFD;&#xFFFD;&#x772;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1D7C;&#xFFFD;&#xB7;&#x1F3;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x535;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;:</int></p>
+<pre><code>std::vector&lt;int&gt; v1(10,20)            //&#x2B9;&#xFFFD;&#xF7;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;10&#xFFFD;&#xFFFD;&#x52A;&#xFFFD;&#x635;&#xFFFD;std::vector&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;20
+std::vector&lt;int&gt; v2{10,20}            //&#x2B9;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;2&#xFFFD;&#xFFFD;&#x52A;&#xFFFD;&#x635;&#xFFFD;std::vector&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x52A;&#xFFFD;&#x637;&#x5B1;&#xFFFD;&#xFFFD;&#xFFFD;10&#xFFFD;&#xFFFD;20
+</code></pre><p>&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::vector&#xFFFD;&#xFFFD;&#xFFFD;&#x53C;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x163;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x53C;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x639;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x461;&#xFFFD;&#xFFFD;&#x3F8;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4AA;&#x5B8;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3AA;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x7E3;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#x3F5;&#xFFFD;&#x435;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x639;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x430;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#x3AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x37B;&#xFFFD;&#xFFFD;&#x2F4;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x639;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2E3;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x6FF;&#x37B;&#xFFFD;&#xFFFD;&#x2F4;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x17B;&#xFFFD;&#xFFFD;&#xFFFD;&#x421;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x639;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#x135;&#xFFFD;&#xFFFD;&#xF2;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x735;&#xFFFD;&#x4F0;&#xFFFD;&#xC863;&#xFFFD;&#xFFFD;&#xFFFD;&#x4EF0;&#x2F5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::vector&#xFFFD;&#x13D;&#x4FF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x6BF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F4;&#xFFFD;&#xFFFD;&#xFFFD;&#x135;&#x637;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x467;&#x3F0;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x53C;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x36C;&#xFFFD;&#xFFFD;&#xFFFD;&#x134;&#xFFFD;&#xFFFD;&#xFFFD;
+&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x6B5;&#x13A;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#x3AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x8EC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x37B;&#xFFFD;&#xFFFD;&#x2F4;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#x2B1;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F0;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x275;&#xFFFD;&#xFFFD;&#xF7;&#xFFFD;std::initializer_list&#xFFFD;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xB5;&#x13A;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x23B;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xB5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x63A;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B1;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xF4;&#xFFFD;&#x5AE;&#x1F0;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3F5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x63A;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xB5;&#x13A;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x36C;&#xFFFD;&#x135;&#x637;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xF2;&#xFFFD;&#xFFFD;&#x671;&#xFFFD;&#xFFFD;&#xF5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xE1;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x63A;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1E1;&#xFFFD;
+&#xFFFD;&#x6B6;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B5;&#xFFFD;&#xFFFD;&#x467;&#x3F0;&#xFFFD;&#x135;&#x637;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3AA;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#x37B;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x8EC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x461;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x17B;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x174;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xE18FE;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x17F;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x461;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xF7;&#x5B8;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x3AA;&#x12C;&#xFFFD;&#x3F9;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F1;&#xFFFD;&#x4AA;&#x2B1;&#xFFFD;&#x17B;&#xFFFD;&#x461;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#x13F;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x7F1;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F9;&#x3DFA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1FD;&#xFFFD;&#x5B9;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5EA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFB;&#xFFFD;&#xFFFD;c++&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x136;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x521;&#xFFFD;&#xFFFD;&#xFFFD;&#x429;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#x429;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;(&#xFFFD;&#xFFFD;&#xFFFD;&#x78EC;&#xFFFD;&#x6B4;&#xFFFD;&#xFFFD;&#xFFFD;std::vector&#xFFFD;&#xFFFD;&#x2B1;&#xFFFD;&#xFFFD;&#x5B8;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x421;&#xFFFD;&#x373;&#xFFFD;&#x2BC;&#x52A;&#xFFFD;&#xFFFD;&#x5B5;),&#x4AA;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xFFFD;&#x421;&#xFFFD;&#xFFFD;&#xFFFD;&#x161;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#x68EC;&#x421;&#xFFFD;&#xFFFD;&#xFFFD;&#x17F;&#xFFFD;&#xFFFD;&#x531;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x12C;&#xFFFD;&#x3F5;&#x132;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B8;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;C++98&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x534;&#xFFFD;&#x373;&#x4BB;&#xFFFD;&#xA3;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;auto&#xFFFD;&#x1B6;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x28EC;&#x4B2;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2F5;&#x135;&#x637;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xF4D3D;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B1;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xF9;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1CBB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x131;&#xFFFD;std::initializer_list&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x375;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x621;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F3;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B1;&#xFFFD;&#xFFFD;&#x5BB;&#xFFFD;&#x434;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;(&#xFFFD;&#xFFFD;&#xFFFD;&#x78EC;&#x2B9;&#xFFFD;&#xFFFD;&#x5B8;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;)&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B7;&#xFFFD;&#x2BD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFB;&#xFFFD;&#x439;&#xFFFD;&#x2B6;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4B5;&#x13D;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x461;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#x5B7;&#xFFFD;&#x2BD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4B1;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xA1;&#xFFFD;
+&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#x123;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x7E3;&#xFFFD;&#x2B9;&#xFFFD;&#xFFFD;&#x421;&#xFFFD;&#xFFFD;&#xFFFD;&#x17B;&#xFFFD;&#xFFFD;&#x1F4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x132;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2FE;&#xFFFD;&#x265;&#xFFFD;&#x123;&#xFFFD;&#xFFFD;&#xFFFD;&#x3AA;&#xFFFD;&#xFFFD;&#x368;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F2;&#xFFFD;&#xFFFD;&#xFFFD;&#x5AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#x5B7;&#xFFFD;&#x2BD;&#xFFFD;&#xFFFD;&#xFFFD;&#xF5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x78EC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x132;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xE18FF;&#x271;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x123;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFA;&#x73C;&#xFFFD;:</p>
+<pre><code>template&lt;typename T,                //&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;
+    typename... Ts&gt;                //&#x2B9;&#xFFFD;&#xF5;&#x132;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;
+void doSomeWork(TS&amp;&amp;... params)
+{
+   create local T objcet from params...
+   ...
+}
+</code></pre><p>&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B7;&#xFFFD;&#x2BD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F5;&#xFFFD;&#x3B1;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B5;&#xFFFD;&#x134;&#xFFFD;&#xFFFD;&#xFFFD;(&#xFFFD;&#x3BC;&#xFFFD;&#xFFFD;&#xFFFD;&#x13F;25&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;std::forward&#x2F5;&#xFFFD;&#xFFFD;):</p>
+<pre><code>   T localObject(std::forward&lt;Ts&gt;(params)...);        //&#x2B9;&#xFFFD;&#xFFFD;&#x421;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;
+   T localObject{std::forward&lt;Ts&gt;(params)...};        //&#x2B9;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;
+</code></pre><p>&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xB5;&#x135;&#xFFFD;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;:</p>
+<pre><code>  std::vector&lt;int&gt; v;
+  ...
+  doSomeWork&lt;std::vector&lt;int&gt;&gt;(10,20);
+</code></pre><p>&#xFFFD;&#xFFFD;&#xFFFD;doSomeWork&#x2B9;&#xFFFD;&#xFFFD;&#x421;&#xFFFD;&#xFFFD;&#xFFFD;&#x174;&#xFFFD;&#xFFFD;&#xFFFD;localObject,&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xF5;&#xFFFD;10&#xFFFD;&#xFFFD;&#x52A;&#xFFFD;&#x635;&#xFFFD;std::vector&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;doSomeWork&#xFFFD;&#xFFFD;&#xFFFD;&#xF4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x163;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xF5;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x52A;&#xFFFD;&#x635;&#xFFFD;std::vectore&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4BB;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F6;&#x535;&#xFFFD;&#xFFFD;&#x623;&#xFFFD;doSomeWork&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x7F2;&#xFFFD;&#x5AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5BB;&#xFFFD;&#x435;&#xFFFD;&#xFFFD;&#xF5;&#x132;&#xFFFD;&#x5AA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;
+&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F1;&#xFFFD;&#x5FC;&#xFFFD;&#x2EAF;&#xFFFD;&#xFFFD;std::make_unique&#xFFFD;&#xFFFD;std::make_shared(&#xFFFD;&#x3BC;&#xFFFD;&#xFFFD;&#xFFFD;&#x13F;21)&#xFFFD;&#xFFFD;&#xFFFD;&#x675;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2863;&#xFFFD;&#xFFFD;&#x429;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x6B2;&#xFFFD;&#x2B9;&#xFFFD;&#xFFFD;&#x421;&#xFFFD;&#xFFFD;&#xFFFD;&#x172;&#xFFFD;&#xFFFD;&#x6BD;&#x4FF;&#xFFFD;&#xFFFD;&#x135;&#xFFFD;&#xFFFD;&#xFFFD;&#x5E2;&#xFFFD;&#xFFFD;&#xFFFD;&#x53D;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2863;
+        &#xFFFD;&#xFFFD;&#x4AA;&#x5E2;&#xFFFD;&#xFFFD;&#x135;&#x637;&#xFFFD;
+<em>&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F9;&#x3DFA;&#x2B9;&#xFFFD;&#xF5;&#x133;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#xFDE8;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B9;&#xFFFD;&#xFFFD;&#x5B5;&#xFFFD;&#xFFFD;&#x56D;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5EA;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x4B2;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B4;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;C++&#xFFFD;&#x136;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;
+</em>&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x639;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x461;&#xFFFD;&#xFFFD;&#xFFFD;&#x423;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x173;&#xFFFD;&#x2BC;&#xFFFD;&#xFFFD;&#xFFFD;&#x1FA1;&#xFFFD;&#xFFFD;&#x225;std::initializer_list&#xFFFD;&#x372;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x135;&#x139;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x2B9;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xCEAF;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1A5;&#xFFFD;&#xFFFD;
+<em>&#x4BB;&#xFFFD;&#xFFFD;&#x461;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x17B;&#xFFFD;&#xFFFD;&#xFFFD;&#x421;&#xFFFD;&#xFFFD;&#xFFFD;&#x17E;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x1F9;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x5B5;&#xFFFD;&#xFFFD;&#xFFFD;&#x375;&#xFFFD;std::vector
+</em>&#xFFFD;&#xFFFD;&#x123;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x461;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x17B;&#xFFFD;&#xFFFD;&#xFFFD;&#x421;&#xFFFD;&#xFFFD;&#xFFFD;&#x174;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x73E;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#xFFFD;&#x57D;&#xFFFD;&#xFFFD;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="README.md" class="navigation navigation-prev " aria-label="Previous page: 第三章 使用现代C++">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="8-Prefer-nullptr-to-0-and-NULL.html" class="navigation navigation-next " aria-label="Next page: 条款8：优先使用nullptr而不是0或者NULL">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"条款7：创建对象时区分()和{}","level":"1.7.1","depth":2,"next":{"title":"条款8：优先使用nullptr而不是0或者NULL","level":"1.7.2","depth":2,"path":"MovingtoModernC++/8-Prefer-nullptr-to-0-and-NULL.md","ref":"MovingtoModernC++/8-Prefer-nullptr-to-0-and-NULL.md","articles":[]},"previous":{"title":"第三章 使用现代C++","level":"1.7","depth":1,"path":"MovingtoModernC++/README.md","ref":"MovingtoModernC++/README.md","articles":[{"title":"条款7：创建对象时区分()和{}","level":"1.7.1","depth":2,"path":"MovingtoModernC++/7-Distinguish-between-xxx-when-creating-objects.md","ref":"MovingtoModernC++/7-Distinguish-between-xxx-when-creating-objects.md","articles":[]},{"title":"条款8：优先使用nullptr而不是0或者NULL","level":"1.7.2","depth":2,"path":"MovingtoModernC++/8-Prefer-nullptr-to-0-and-NULL.md","ref":"MovingtoModernC++/8-Prefer-nullptr-to-0-and-NULL.md","articles":[]},{"title":"条款9：优先使用声明别名而不是typedef","level":"1.7.3","depth":2,"path":"MovingtoModernC++/9-Prefer-alias-declarations-to-typedefs.md","ref":"MovingtoModernC++/9-Prefer-alias-declarations-to-typedefs.md","articles":[]},{"title":"条款10：优先使用作用域限制的enmu而不是无作用域的enum","level":"1.7.4","depth":2,"path":"MovingtoModernC++/10-Prefer-scoped-enum-to-unscoped-enums.md","ref":"MovingtoModernC++/10-Prefer-scoped-enum-to-unscoped-enums.md","articles":[]},{"title":"条款11：优先使用delete关键字删除函数而不是private却又不实现的函数","level":"1.7.5","depth":2,"path":"MovingtoModernC++/11-Prefer-deleted-functions-to-private-undefined-ones.md","ref":"MovingtoModernC++/11-Prefer-deleted-functions-to-private-undefined-ones.md","articles":[]},{"title":"条款12：使用override关键字声明覆盖的函数","level":"1.7.6","depth":2,"path":"MovingtoModernC++/12-Declare-overriding-functions-override.md","ref":"MovingtoModernC++/12-Declare-overriding-functions-override.md","articles":[]},{"title":"条款13：优先使用const_iterator而不是iterator","level":"1.7.7","depth":2,"path":"MovingtoModernC++/13-Prefer-const_iterators-to-iterators.md","ref":"MovingtoModernC++/13-Prefer-const_iterators-to-iterators.md","articles":[]},{"title":"条款14：使用noexcept修饰不想抛出异常的函数","level":"1.7.8","depth":2,"path":"MovingtoModernC++/14-Declare-functions-noexcept-if-they-won’t-emit-exceptions.md","ref":"MovingtoModernC++/14-Declare-functions-noexcept-if-they-won’t-emit-exceptions.md","articles":[]},{"title":"条款15：尽可能的使用constexpr","level":"1.7.9","depth":2,"path":"MovingtoModernC++/15-Use-constexpr-whenever-possible.md","ref":"MovingtoModernC++/15-Use-constexpr-whenever-possible.md","articles":[]},{"title":"条款16：保证const成员函数线程安全","level":"1.7.10","depth":2,"path":"MovingtoModernC++/16-Make-const-member-functions-thread-safe.md","ref":"MovingtoModernC++/16-Make-const-member-functions-thread-safe.md","articles":[]},{"title":"条款17：理解特殊成员函数的生成","level":"1.7.11","depth":2,"path":"MovingtoModernC++/17-Understand-special-member-function-generation.md","ref":"MovingtoModernC++/17-Understand-special-member-function-generation.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"MovingtoModernC++/7-Distinguish-between-xxx-when-creating-objects.md","mtime":"2017-06-24T08:29:42.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-24T08:30:08.495Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
